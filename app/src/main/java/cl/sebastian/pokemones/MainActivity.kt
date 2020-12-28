@@ -2,6 +2,8 @@ package cl.sebastian.pokemones
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
+import cl.sebastian.pokemones.databinding.ActivityMainBinding
 
 /*
 Lista de actividades
@@ -15,6 +17,9 @@ adapter para spinner
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val binding=ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        binding.rvlistapokemones.adapter=PokeAdapter()
+        binding.rvlistapokemones.layoutManager=LinearLayoutManager(this)
     }
 }

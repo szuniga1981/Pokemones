@@ -3,7 +3,12 @@ package cl.sebastian.pokemones
 import java.util.*
 
 class Pokedex {
-    val pokelist: List<Any>
+    fun getListaFiltrada(tipo: String): List<Pokemon> {
+        val listaFiltrada = pokelist.filter { p -> p.types.contains(tipo) }
+        return listaFiltrada
+    }
+
+    val pokelist: List<Pokemon>
         get() {
             val pokelist: MutableList<Pokemon> = ArrayList<Pokemon>()
             pokelist.add(
